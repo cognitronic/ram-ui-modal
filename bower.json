@@ -1,0 +1,11 @@
+{
+  "name": "ram-ui-modal",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.3.9",
+    "angular-mocks": "1.3.9",
+    "angular-bootstrap": "0.12.0",
+    "jquery": "1.9.1",
+    "lodash": "2.4.1"
+  }
+}
