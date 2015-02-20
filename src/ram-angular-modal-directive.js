@@ -6,22 +6,22 @@
 
 	var link = function(scope, element, attrs){
 		var dialogProvider = element.injector().get('DialogsService');
-		var templateFile = attrs.ccCustomModal;
-		var controller = attrs.ccModalController;
+		var templateFile = attrs.ramModal;
+		var controller = attrs.modalController;
 		scope.dialogModel = {
 			header: 'Notification Settings'
 		};
 		element.bind('click', function(event){
-			if(scope.ccOnLoadModalAction)
-				scope.$eval(scope.ccOnLoadModalAction);
+			if(scope.onLoadModalAction)
+				scope.$eval(scope.onLoadModalAction);
 			var dialog = dialogProvider.create(templateFile, controller, scope.dialogModel);
 			dialog.result.then(function(){
-				if(scope.ccPostSubmitAction){
-					scope.$eval(scope.ccPostSubmitAction);
+				if(scope.postSubmitAction){
+					scope.$eval(scope.postSubmitAction);
 				}
 			}, function(){
-				if(scope.ccPostCancelAction){
-					scope.$eval(scope.ccPostCancelAction);
+				if(scope.postCancelAction){
+					scope.$eval(scope.postCancelAction);
 				}
 			});
 		});
